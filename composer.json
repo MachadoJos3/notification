@@ -1,0 +1,26 @@
+{
+    "name": "nomad/notification",
+    "description": "Biblioteca usada para gerar notificações via email",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Romario Machado",
+            "email": "machadodev03@gmail.com",
+            "homepage": "http://localhost/upInside/composer",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "6.8.0"
+    },
+    "config": {
+        "vendor-dir": "lib_ext"
+    },
+    "autoload": {
+        "psr-4": {
+            "Notification\\": "_app"
+        }
+    }
+}
