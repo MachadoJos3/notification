@@ -10,20 +10,21 @@ class Email
 {
     private $mail = stdClass::class;
 
-    public function __construct()
+    public function __construct($smtp_debug, $host, $user, $pass, $smtp_secure, $port, $set_from_email, $set_from_name)
     {
         $this->mail = new PHPMailer(true);
+        $this->mail->SMTPDebug = $smtp_debug;
         $this->mail->CharSet = 'UTF-8';
         $this->mail->isSMTP();
-        $this->mail->Host = 'sandbox.smtp.mailtrap.io';
+        $this->mail->Host = $host;
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = '760a5bc13a1778';
-        $this->mail->Password = 'e39b93b2b6cea1';
+        $this->mail->Username = $user;
+        $this->mail->SMTPSecure = $smtp_secure;
+        $this->mail->Password = $pass;
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $this->mail->Port = 2525;
-
-        $this->mail->setFrom('machadodev03@gmail.com', 'Atendimento');
-        $this->mail->addAddress('gengarpkm03@gmail.com', 'José');
+        $this->mail->Port = $port;
+        $this->mail->setFrom($set_from_email, $set_from_name);
+        // $this->mail->addAddress('gengarpkm03@gmail.com', 'José');
 
         $this->mail->isHTML(true);
     }
