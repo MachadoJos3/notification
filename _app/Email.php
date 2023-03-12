@@ -24,7 +24,6 @@ class Email
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $this->mail->Port = $port;
         $this->mail->setFrom($set_from_email, $set_from_name);
-        // $this->mail->addAddress('gengarpkm03@gmail.com', 'José');
 
         $this->mail->isHTML(true);
     }

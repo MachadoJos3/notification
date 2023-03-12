@@ -3,9 +3,9 @@ require __DIR__ . "/../lib_ext/autoload.php";
 
 use Notification\Email;
 
-// $email = new PHPMailer;
 
-$novo_email = new Email(2, "sandbox.smtp.mailtrap.io", "760a5bc13a1778", "e39b93b2b6cea1", "tls", 2525, "machadodev03@gmail.com", "Atendimento");
-$novo_email->sendEmail("Assunto de teste", "<p>Esse é um e-mail de <b>Teste</>", "machadodev03@gmail.com", "Jose", "machadodev03@gmail.com", "J Machado");
+$email = new Email(2, "mail.host.com", "your@email.com", "your-pass", "smtp secure (tls/ssl)", "port (587)", "from@email.com", "From Name");
 
-var_dump($novo_email);
+$email->sendEmail("SUbject", "Content", "reply@email.com", "Replay Name", "address@email.com", "Address Name");
+
+var_dump($email);
